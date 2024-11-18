@@ -55,5 +55,5 @@ public class Deposito {
 		this.capacidadeMax = capacidadeMax;
 	}
 	
-	
+	public void CadastroDeposito() {}
 }
