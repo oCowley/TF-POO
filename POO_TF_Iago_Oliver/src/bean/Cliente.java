@@ -1,5 +1,9 @@
 package bean;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class Cliente {
 	
 	private String codigo;
@@ -35,5 +39,20 @@ public class Cliente {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	
+	public void CadastroCliente() {
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		Cliente novoCliente = new Cliente(codigo, nome, telefone);
+		clientes.add(novoCliente);
+		Collections.sort(clientes, Comparator.comparing(Cliente::getCodigo));
+		System.out.println("feito");
+		System.out.println(novoCliente);
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [codigo=" + codigo + ", nome=" + nome + ", telefone=" + telefone + "]";
+	}
+	
 	
 }

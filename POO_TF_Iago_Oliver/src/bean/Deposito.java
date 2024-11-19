@@ -1,5 +1,9 @@
 package bean;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class Deposito {
 	private int codigo;
 	private String nome;
@@ -55,5 +59,20 @@ public class Deposito {
 		this.capacidadeMax = capacidadeMax;
 	}
 	
-	public void CadastroDeposito() {}
+	public void CadastroDeposito() {
+		ArrayList<Deposito> depositos = new ArrayList<Deposito>();
+		Deposito novoDeposito = new Deposito(codigo, nome, cidade, endereco, capacidadeMax);
+		depositos.add(novoDeposito);
+		Collections.sort(depositos, Comparator.comparingInt(Deposito::getCodigo));
+		System.out.println("feito");
+		System.out.println(novoDeposito);
+	}
+
+	@Override
+	public String toString() {
+		return "Deposito [codigo=" + codigo + ", nome=" + nome + ", cidade=" + cidade + ", endereco=" + endereco
+				+ ", capacidadeMax=" + capacidadeMax + "]";
+	}
+	
+	
 }

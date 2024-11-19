@@ -25,5 +25,4 @@ public class Perecível implements Categoria{
 		this.tempoMaximoValidade = tempoMaximoValidade;
 	}
 	
-	
 }

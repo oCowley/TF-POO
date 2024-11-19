@@ -1,5 +1,9 @@
 package bean;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
 public class Item {
 	private String codigo;
 	private String descricao;
@@ -7,16 +11,17 @@ public class Item {
 	private String cliente;
 	private double volume;
 	private double valorDeclarado;
-	//private  situacao;
+	private EnumaracaoSituacao situacao;
 	
 	public Item(String codigo, String descricao, String categoria, String cliente, double volume,
-			double valorDeclarado) {
+			double valorDeclarado, EnumaracaoSituacao situacao ) {
 		this.codigo = codigo;
 		this.descricao = descricao;
 		this.categoria = categoria;
 		this.cliente = cliente;
 		this.volume = volume;
 		this.valorDeclarado = valorDeclarado;
+		this.situacao = situacao;
 	}
 	
 	public String getCodigo() {
@@ -54,6 +59,29 @@ public class Item {
 	}
 	public void setValorDeclarado(double valorDeclarado) {
 		this.valorDeclarado = valorDeclarado;
+	}
+
+	public EnumaracaoSituacao getSituacao() {
+		return situacao;
+	}
+
+	public void setSituacao(EnumaracaoSituacao situacao) {
+		this.situacao = situacao;
+	}
+	
+	public void CadastroItem() {
+		ArrayList<Item> itens = new ArrayList<Item>();
+		Item novoitem = new Item(codigo, descricao, categoria, cliente, volume, valorDeclarado, situacao);
+		itens.add(novoitem);
+		System.out.println("feito");
+		System.out.println(novoitem);
+	}
+
+	@Override
+	public String toString() {
+		return "Item [codigo=" + codigo + ", descricao=" + descricao + ", categoria=" + categoria + ", cliente="
+				+ cliente + ", volume=" + volume + ", valorDeclarado=" + valorDeclarado + ", situacao=" + situacao
+				+ "]";
 	}
 	
 	
