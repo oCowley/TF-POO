@@ -17,16 +17,40 @@ public class App {
 		c.cadastroCliente("2B", "Jorge", "5555555555");
 		c.cadastroCliente("1A", "Adalirio", "3434334343");
 		System.out.println("------------------");
+		ItemService i = new ItemService(c);
 		try {
-			ItemService i = new ItemService();
 			i.cadastroItem("2", "uma jabulane", "Durável", c.getClienteByCodigo("1A").get(), 1, 30,
 					EnumaracaoSituacao.ARMAZENADO);
-			i.cadastroItem("1", "Banana", "Perecí­vel", c.getClienteByCodigo("2B").get(), 1, 10,
+			i.cadastroItem("1", "Banana", "Perecível", c.getClienteByCodigo("2B").get(), 1, 10,
 					EnumaracaoSituacao.PENDENTE);
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
+		System.out.println("------------------");
+		System.out.println("------------------");
+		// dep.salvar();
+		dep.carregar();
+		System.out.println("++++++++++++++++++");
+		System.out.println("------------------");
+		// c.salvar();
+		c.carregar();
+		System.out.println("++++++++++++++++++");
+		System.out.println("++++++++++++++++++");
+		i.salvar();
+		i.carregar();
+		c.cadastroCliente("5J", "Karlos", "5555655855");
+		try {
+			i.cadastroItem("22", "Oscar", "Durável", c.getClienteByCodigo("5J").get(), 1, 350,
+					EnumaracaoSituacao.ARMAZENADO);
+			i.cadastroItem("6", "Maca", "Perecível", c.getClienteByCodigo("5J").get(), 1, 150,
+					EnumaracaoSituacao.PENDENTE);
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		i.salvar();
+		i.carregar();
 	}
 
 }
