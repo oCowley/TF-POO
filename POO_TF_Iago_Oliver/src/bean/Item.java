@@ -8,12 +8,12 @@ public class Item {
 	private String codigo;
 	private String descricao;
 	private String categoria;
-	private String cliente;
+	private Cliente cliente;
 	private double volume;
 	private double valorDeclarado;
 	private EnumaracaoSituacao situacao;
 	
-	public Item(String codigo, String descricao, String categoria, String cliente, double volume,
+	public Item(String codigo, String descricao, String categoria, Cliente cliente, double volume,
 			double valorDeclarado, EnumaracaoSituacao situacao ) {
 		this.codigo = codigo;
 		this.descricao = descricao;
@@ -42,10 +42,10 @@ public class Item {
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
-	public String getCliente() {
+	public Cliente getCliente() {
 		return cliente;
 	}
-	public void setCliente(String cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 	public double getVolume() {
