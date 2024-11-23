@@ -1,9 +1,9 @@
 package bean;
 
-public class Perecivel implements Categoria{
+public class Perecivel implements Categoria {
 	private String origem;
 	private String tempoMaximoValidade;
-	
+
 	public Perecivel(String origem, String tempoMaximoValidade) {
 		this.origem = origem;
 		this.tempoMaximoValidade = tempoMaximoValidade;
@@ -24,5 +24,5 @@ public class Perecivel implements Categoria{
 	public void setTempoMaximoValidade(String tempoMaximoValidade) {
 		this.tempoMaximoValidade = tempoMaximoValidade;
 	}
-	
+
 }

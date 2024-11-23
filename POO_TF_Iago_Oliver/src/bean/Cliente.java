@@ -5,11 +5,11 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class Cliente {
-	
+
 	private String codigo;
 	private String nome;
 	private String telefone;
-	
+
 	public Cliente(String codigo, String nome, String telefone) {
 		this.codigo = codigo;
 		this.nome = nome;
@@ -39,7 +39,7 @@ public class Cliente {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	
+
 	public void CadastroCliente() {
 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		Cliente novoCliente = new Cliente(codigo, nome, telefone);
@@ -53,6 +53,5 @@ public class Cliente {
 	public String toString() {
 		return "Cliente [codigo=" + codigo + ", nome=" + nome + ", telefone=" + telefone + "]";
 	}
-	
-	
+
 }

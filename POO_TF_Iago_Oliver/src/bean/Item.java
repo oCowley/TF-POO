@@ -12,9 +12,9 @@ public class Item {
 	private double volume;
 	private double valorDeclarado;
 	private EnumaracaoSituacao situacao;
-	
+
 	public Item(String codigo, String descricao, String categoria, Cliente cliente, double volume,
-			double valorDeclarado, EnumaracaoSituacao situacao ) {
+			double valorDeclarado, EnumaracaoSituacao situacao) {
 		this.codigo = codigo;
 		this.descricao = descricao;
 		this.categoria = categoria;
@@ -23,40 +23,51 @@ public class Item {
 		this.valorDeclarado = valorDeclarado;
 		this.situacao = situacao;
 	}
-	
+
 	public String getCodigo() {
 		return codigo;
 	}
+
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
+
 	public String getDescricao() {
 		return descricao;
 	}
+
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+
 	public String getCategoria() {
 		return categoria;
 	}
+
 	public void setCategoria(String categoria) {
 		this.categoria = categoria;
 	}
+
 	public Cliente getCliente() {
 		return cliente;
 	}
+
 	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
+
 	public double getVolume() {
 		return volume;
 	}
+
 	public void setVolume(double volume) {
 		this.volume = volume;
 	}
+
 	public double getValorDeclarado() {
 		return valorDeclarado;
 	}
+
 	public void setValorDeclarado(double valorDeclarado) {
 		this.valorDeclarado = valorDeclarado;
 	}
@@ -68,7 +79,7 @@ public class Item {
 	public void setSituacao(EnumaracaoSituacao situacao) {
 		this.situacao = situacao;
 	}
-	
+
 	public void CadastroItem() {
 		ArrayList<Item> itens = new ArrayList<Item>();
 		Item novoitem = new Item(codigo, descricao, categoria, cliente, volume, valorDeclarado, situacao);
@@ -83,6 +94,5 @@ public class Item {
 				+ cliente + ", volume=" + volume + ", valorDeclarado=" + valorDeclarado + ", situacao=" + situacao
 				+ "]";
 	}
-	
-	
+
 }
