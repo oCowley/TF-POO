@@ -10,7 +10,7 @@ public class Deposito {
 	private String cidade;
 	private String endereco;
 	private int capacidadeMax;
-	
+
 	public Deposito(int codigo, String nome, String cidade, String endereco, int capacidadeMax) {
 		this.codigo = codigo;
 		this.nome = nome;
@@ -58,14 +58,11 @@ public class Deposito {
 	public void setCapacidadeMax(int capacidadeMax) {
 		this.capacidadeMax = capacidadeMax;
 	}
-	
-	
 
 	@Override
 	public String toString() {
 		return "Deposito [codigo=" + codigo + ", nome=" + nome + ", cidade=" + cidade + ", endereco=" + endereco
 				+ ", capacidadeMax=" + capacidadeMax + "]";
 	}
-	
-	
+
 }

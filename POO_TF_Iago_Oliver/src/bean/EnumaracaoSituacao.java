@@ -1,6 +1,6 @@
 package bean;
 
 public enum EnumaracaoSituacao {
-	PENDENTE,ARMAZENADO,CANCELADO,RETIRADO
-	
+	PENDENTE, ARMAZENADO, CANCELADO, RETIRADO
+
 }
