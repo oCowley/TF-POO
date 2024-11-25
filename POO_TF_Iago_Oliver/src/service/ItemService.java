@@ -30,7 +30,7 @@ public class ItemService {
 	public void cadastroItem(String codigo, String descricao, String categoria, Cliente cliente, double volume,
 			double valorDeclarado, EnumaracaoSituacao situacao) throws Exception {
 		if (getItemByCodigo(codigo).isPresent()) {
-			throw new Exception("item " + codigo + " já existe!!!");
+			throw new Exception("item " + codigo + " jï¿½ existe!!!");
 		}
 		Item novoItem = new Item(codigo, descricao, categoria, cliente, volume, valorDeclarado, situacao);
 		items.add(novoItem);
@@ -69,7 +69,7 @@ public class ItemService {
 		System.out.println("carregado item...");
 		try {
 			FileReader f = new FileReader(ITENS_CSV);
-			// Scanner é responsável por ler
+			// Scanner ï¿½ responsï¿½vel por ler
 			Scanner arquivolido = new Scanner(f);
 			// mostra o delimitador
 			arquivolido.useDelimiter(QUEBRADELINHA);

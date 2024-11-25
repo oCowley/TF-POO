@@ -1,56 +1,29 @@
-package bean;
-
-import service.ClienteService;
-import service.DepositoService;
-import service.ItemService;
+import java.util.Optional;
 
 public class App {
+    public static void main(String[] args) throws Exception {
+        DepositoService depositoService = new DepositoService();
+        ClienteService clienteService = new ClienteService();
+        ItemService itemService = new ItemService(clienteService, depositoService);
 
-	public static void main(String[] args) throws Exception {
-		DepositoService dep = new DepositoService();
+        depositoService.cadastroDeposito(1, "Dep√≥sito 1", "Cidade A", "Endere√ßo 1", 50);
+        depositoService.cadastroDeposito(2, "Dep√≥sito 2", "Cidade B", "Endere√ßo 2", 100);
 
-		dep.cadastroDeposito(3, "PETER", "Canoas", "rua 12 de Outubro, 22", 30);
-		dep.cadastroDeposito(2, "JOMES", "Pelotas", "rua jundiai, 2003", 100);
-		dep.cadastroDeposito(1, "HOMMES", "Porto", "rua amadeus sho, 33", 20);
-		System.out.println("------------------");
-		ClienteService c = new ClienteService();
-		c.cadastroCliente("2B", "Jorge", "5555555555");
-		c.cadastroCliente("1A", "Adalirio", "3434334343");
-		System.out.println("------------------");
-		ItemService i = new ItemService(c);
-		try {
-			i.cadastroItem("2", "uma jabulane", "Dur·vel", c.getClienteByCodigo("1A").get(), 1, 30,
-					EnumaracaoSituacao.ARMAZENADO);
-			i.cadastroItem("1", "Banana", "PerecÌvel", c.getClienteByCodigo("2B").get(), 1, 10,
-					EnumaracaoSituacao.PENDENTE);
+        clienteService.cadastroCliente("1A", "Cliente 1", "999999999");
+        clienteService.cadastroCliente("2B", "Cliente 2", "888888888");
 
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-		System.out.println("------------------");
-		System.out.println("------------------");
-		// dep.salvar();
-		dep.carregar();
-		System.out.println("++++++++++++++++++");
-		System.out.println("------------------");
-		// c.salvar();
-		c.carregar();
-		System.out.println("++++++++++++++++++");
-		System.out.println("++++++++++++++++++");
-		i.salvar();
-		i.carregar();
-		c.cadastroCliente("5J", "Karlos", "5555655855");
-		try {
-			i.cadastroItem("22", "Oscar", "Dur·vel", c.getClienteByCodigo("5J").get(), 1, 350,
-					EnumaracaoSituacao.ARMAZENADO);
-			i.cadastroItem("6", "Maca", "PerecÌvel", c.getClienteByCodigo("5J").get(), 1, 150,
-					EnumaracaoSituacao.PENDENTE);
+        itemService.cadastroItem("001", "Item 1", "Dur√°vel", clienteService.getClienteByCodigo("1A").get(), 20, 200.0, EnumaracaoSituacao.PENDENTE);
+        itemService.cadastroItem("002", "Item 2", "Perec√≠vel", clienteService.getClienteByCodigo("2B").get(), 70, 300.0, EnumaracaoSituacao.PENDENTE);
 
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-		}
-		i.salvar();
-		i.carregar();
-	}
+        itemService.organizarItens();
 
+        itemService.consultarItens();
+
+        
+        try {
+            itemService.alterarSituacao("001", EnumaracaoSituacao.RETIRADO);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

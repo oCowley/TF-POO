@@ -55,7 +55,7 @@ public class DepositoService {
 		System.out.println("carregado deposito...");
 		try {
 			FileReader f = new FileReader(DEPOSITOS_CSV);
-			// Scanner é responsável por ler
+			// Scanner ï¿½ responsï¿½vel por ler
 			Scanner arquivolido = new Scanner(f);
 			// mostra o delimitador
 			arquivolido.useDelimiter(QUEBRADELINHA);
